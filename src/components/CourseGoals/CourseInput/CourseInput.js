@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 // import styled from "styled-components";
 
-import Button from "../../UI/Button/Button";
-import styles from "./CourseInput.module.css";
+import Button from '../../UI/Button/Button';
+import styles from './CourseInput.module.css';
 
 // const FormControl = styled.div`
 //   margin: 0.5rem 0;
@@ -32,11 +32,11 @@ import styles from "./CourseInput.module.css";
 // `;
 
 const CourseInput = (props) => {
-  const [enteredValue, setEnteredValue] = useState("");
+  const [enteredValue, setEnteredValue] = useState('');
   const [isValid, setIsValid] = useState(true);
 
   const goalInputChangeHandler = (event) => {
-    if (event.target.value.trim().value > 0) setIsValid(false);
+    if (event.target.value.trim().length > 0) setIsValid(true);
     setEnteredValue(event.target.value); // tracks every change in input field
   };
 
@@ -53,7 +53,7 @@ const CourseInput = (props) => {
   return (
     <form onSubmit={formSubmitHandler}>
       <div
-        className={`${styles["form-control"]} ${!isValid && styles.invalid}`}
+        className={`${styles['form-control']} ${!isValid && styles.invalid}`}
       >
         <label>Course Goal</label>
 
